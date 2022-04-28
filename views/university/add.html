@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form layui-col-space5" method="post" action="/admin/university/store"
+              enctype="application/x-www-form-urlencoded">
+            <div class="layui-form-item">
+                <label for="name" class="layui-form-label">
+                    <span class="x-red">*</span>学校名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="name" name="name" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="code" class="layui-form-label">
+                    <span class="x-red">*</span>学校代码</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="code" name="code" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item x-city" id="start">
+                <label for="province" class="layui-form-label">
+                    <span class="x-red">*</span>省份</label>
+                <div class="layui-input-inline">
+                    <select name="province" lay-filter="province">
+                      <option value="">请选择省份</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="type" class="layui-form-label">
+                    <span class="x-red">*</span>学校类型</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="type" name="type" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="nature" class="layui-form-label">
+                    <span class="x-red">*</span>办学性质</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="nature" name="nature" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="ranking" class="layui-form-label">
+                    <span class="x-red">*</span>学校排名</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="ranking" name="ranking" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="is985" class="layui-form-label">
+                    <span class="x-red">*</span>是否985
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="is985" name="is985" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="is211" class="layui-form-label">
+                    <span class="x-red">*</span>是否211
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="is211" name="is211" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="isDoubleTop" class="layui-form-label">
+                    <span class="x-red">*</span>是否双一流
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="isDoubleTop" name="isDoubleTop" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="briefIntroduction" class="layui-form-label">
+                    学校介绍
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="briefIntroduction" name="briefIntroduction" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="area" class="layui-form-label">
+                    <span class="x-red">*</span>占地面积
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="area" name="area" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="teachersNum" class="layui-form-label">
+                    <span class="x-red">*</span>教师人数
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="teachersNum" name="teachersNum" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="studentsNum" class="layui-form-label">
+                    <span class="x-red">*</span>学生人数
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="studentsNum" name="studentsNum" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="studentTeacherRate" class="layui-form-label">
+                    <span class="x-red">*</span>师生比例
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="studentTeacherRate" name="studentTeacherRate" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="createTime" class="layui-form-label">
+                    <span class="x-red">*</span>创建时间
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="createTime" name="createTime"  autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="employedRate" class="layui-form-label">
+                    <span class="x-red">*</span>就业率
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="employedRate" name="employedRate" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="furtherStudyRate" class="layui-form-label">
+                    <span class="x-red">*</span>深造率
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="furtherStudyRate" name="furtherStudyRate" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="advancedMajorNum" class="layui-form-label">
+                    <span class="x-red">*</span>优势专业
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="advancedMajorNum" name="advancedMajorNum" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="masterMajorNum" class="layui-form-label">
+                    <span class="x-red">*</span>硕士专业
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="masterMajorNum" name="masterMajorNum" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="doctorMajorNum" class="layui-form-label">
+                    <span class="x-red">*</span>博士专业
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="doctorMajorNum" name="doctorMajorNum" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="phone" class="layui-form-label">
+                    <span class="x-red">*</span>联系方式
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="phone" name="phone" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="address" class="layui-form-label">
+                    <span class="x-red">*</span>学校地址
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="address" name="address" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="badge" class="layui-form-label">
+                    <span class="x-red">*</span>校徽
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="badge" name="badge" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="schoolScenery" class="layui-form-label">
+                    <span class="x-red">*</span>学校背景
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="schoolScenery" name="schoolScenery" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="homePage" class="layui-form-label">
+                    <span class="x-red">*</span>官网
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="homePage" name="homePage" required="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="subBtn" class="layui-form-label"></label>
+                <button class="layui-btn"  id="subBtn">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+<script src="/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="/js/xcity.js"></script>
+
+<script>
+    layui.use(['form','code'], function(){
+      form = layui.form;
+
+      layui.code();
+
+      $('#start').xcity();
+      
+      // $('#end').xcity('广东','广州市','东山区');
+
+    });
+  </script>
+</html>

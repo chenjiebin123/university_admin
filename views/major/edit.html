@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.2</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row">
+            <form class="layui-form" method="post" action="/admin/major/updata"
+                enctype="application/x-www-form-urlencoded">
+                <div class="layui-form-item">
+                    <label for="id" class="layui-form-label">
+                        <span class="x-red">*</span>id
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="id" name="id" required="" lay-verify="required" readonly
+                            unselectable="on" value="{{data.id}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="majorName" class="layui-form-label">
+                        <span class="x-red">*</span>专业名称
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="majorName" name="majorName" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.majorName}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="subject" class="layui-form-label">
+                        <span class="x-red">*</span>专业类别
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="subject" name="subject" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.subject}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="majorType" class="layui-form-label">
+                        <span class="x-red">*</span>专业分类
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="majorType" name="majorType" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.majorType}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="majorCode" class="layui-form-label">
+                        <span class="x-red">*</span>专业代码
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="majorCode" name="majorCode" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.majorCode}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="level" class="layui-form-label">
+                        <span class="x-red">*</span>专业层次
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="level" name="level" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.level}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="schoolYear" class="layui-form-label">
+                        <span class="x-red">*</span>专业学制
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="schoolYear" name="schoolYear" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.schoolYear}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="degree" class="layui-form-label">
+                        <span class="x-red">*</span>专业学历
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="degree" name="degree" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.degree}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="similarMajor" class="layui-form-label">
+                        <span class="x-red">*</span>相似专业
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="similarMajor" name="similarMajor" required=""  unselectable="on"
+                            lay-verify="required" value="{{data.similarMajor}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="summary" class="layui-form-label">
+                        专业介绍
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="summary" name="summary"  unselectable="on"
+                            class="layui-textarea">{{data.summary}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="educationGoal" class="layui-form-label">
+                        培养目标
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="educationGoal" name="educationGoal" 
+                            unselectable="on" class="layui-textarea">{{data.educationGoal}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="educationRequire" class="layui-form-label">
+                        培养要求
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="educationRequire" name="educationRequire" 
+                            unselectable="on" class="layui-textarea">{{data.educationRequire}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="famousScholar" class="layui-form-label">
+                        专业名人
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="famousScholar" name="famousScholar" 
+                            unselectable="on" class="layui-textarea">{{data.famousScholar}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="mainCourse" class="layui-form-label">
+                        主干课程
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="mainCourse" name="mainCourse"  unselectable="on"
+                            class="layui-textarea">{{data.mainCourse}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="courseRequire" class="layui-form-label">
+                        学科要求
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="courseRequire" name="courseRequire"  unselectable="on"
+                            class="layui-textarea">{{data.courseRequire}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label for="knowledgeAbility" class="layui-form-label">
+                        知识能力
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="knowledgeAbility" name="knowledgeAbility" 
+                            unselectable="on" class="layui-textarea">{{data.knowledgeAbility}}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="boyGirlRate" class="layui-form-label">
+                        <span class="x-red">*</span>男女比例
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="boyGirlRate" name="boyGirlRate" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.boyGirlRate}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="wenLikeRate" class="layui-form-label">
+                        <span class="x-red">*</span>喜欢比例
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="wenLikeRate" name="wenLikeRate" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.wenLikeRate}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="graduateNum" class="layui-form-label">
+                        <span class="x-red">*</span>毕业人数
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="graduateNum" name="graduateNum" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.graduateNum}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="avgSalary" class="layui-form-label">
+                        <span class="x-red">*</span>平均薪酬
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="avgSalary" name="avgSalary" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.avgSalary}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="jobRankingOfAll" class="layui-form-label">
+                        <span class="x-red">*</span>就业排名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="jobRankingOfAll" name="jobRankingOfAll" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.jobRankingOfAll}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="jobRankingOfSubject" class="layui-form-label">
+                        <span class="x-red">*</span>分类内的排名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="jobRankingOfSubject" name="jobRankingOfSubject" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.jobRankingOfSubject}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="lastYearEmployedRate" class="layui-form-label">
+                        <span class="x-red">*</span>就业率
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="lastYearEmployedRate" name="lastYearEmployedRate" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.lastYearEmployedRate}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="maxRequireCity" class="layui-form-label">
+                        <span class="x-red">*</span>就业城市
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="maxRequireCity" name="maxRequireCity" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.maxRequireCity}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="maxRequireIndustry" class="layui-form-label">
+                        <span class="x-red">*</span>就业方向
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="maxRequireIndustry" name="maxRequireIndustry" required="" lay-verify="required" 
+                            unselectable="on" value="{{data.maxRequireIndustry}}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="L_repass" class="layui-form-label">
+                    </label>
+                    <button class="layui-btn" lay-submit="">
+                        修改
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        layui.use(['form', 'layer'],
+            function () {
+                $ = layui.jquery;
+                var form = layui.form,
+                    layer = layui.layer;
+
+                //自定义验证规则
+                // form.verify({
+                //     nikename: function(value) {
+                //         if (value.length < 5) {
+                //             return '昵称至少得5个字符啊';
+                //         }
+                //     },
+                //     pass: [/(.+){6,12}$/, '密码必须6到12位'],
+                //     repass: function(value) {
+                //         if ($('#L_pass').val() != $('#L_repass').val()) {
+                //             return '两次密码不一致';
+                //         }
+                //     }
+                // });
+
+                //监听提交
+                form.on('submit(add)',
+                    function (data) {
+                        console.log(data);
+                        //发异步，把数据提交给php
+                        layer.alert("增加成功", { icon: 6 },
+                            function () {
+                                //关闭当前frame
+                                xadmin.close();
+
+                                // 可以对父窗口进行刷新 
+                                xadmin.father_reload();
+                            });
+                        return false;
+                    });
+
+            });
+
+    </script>
+    <script>
+        // var _hmt = _hmt || []; (function() {
+        //         var hm = document.createElement("script");
+        //         hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+        //         var s = document.getElementsByTagName("script")[0];
+        //         s.parentNode.insertBefore(hm, s);
+        //     })();
+    </script>
+</body>
+
+</html>

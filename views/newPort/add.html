@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form layui-col-space5" method="post" action="/admin/newPort/store"
+              enctype="application/x-www-form-urlencoded">
+            <div class="layui-form-item">
+                <label for="title" class="layui-form-label">
+                    <span class="x-red">*</span>新闻标题</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="title" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="content" class="layui-form-label">
+                    新闻内容
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="content" name="content" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="writer" class="layui-form-label">
+                    <span class="x-red">*</span>新闻作者</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="writer" name="writer" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="time" class="layui-form-label">
+                    <span class="x-red">*</span>发布时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="time" name="time" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="image" class="layui-form-label">
+                    <span class="x-red">*</span>新闻图片</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="image" name="image" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label for="subBtn" class="layui-form-label"></label>
+                <button class="layui-btn"  id="subBtn">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+<script src="/js/sweetalert.min.js"></script>
+
+<script>
+    // <!--前台验证 js + 正则 ：jquery validate 插件 -->
+    // https://www.runoob.com/jquery/jquery-plugin-validate.html
+    // 前台验证是为了更好的用户体验，后台验证是为了数据的安全。后端永远不要相信前端提交的数据。 后端必须自己验证，不能依赖于前端。
+    $(function () {
+
+        // $("#subBtn").click(function (e) {
+        //     let cateName= $("#code").val().trim();
+        //     if(cateName == ''){
+        //         // alert('分类名称不能为空');
+        //         swal( "提示" ,  "类名称不能为空" ,  "error" );
+        //         // swal( "提示" ,  "类名称不能为空" ,  "success" );
+        //         e.preventDefault(); // 阻止表单的默认行为
+        //         return false;
+        //     }
+        // })
+    })
+
+</script>
+</html>

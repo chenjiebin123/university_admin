@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/xadmin.js"></script>
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form layui-col-space5" method="post" action="/admin/major/store"
+              enctype="application/x-www-form-urlencoded">
+            <div class="layui-form-item">
+                <label for="majorName" class="layui-form-label">
+                    <span class="x-red">*</span>专业名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="majorName" name="majorName" autocomplete="off" class="layui-input">
+                </div>
+                <!--直接显示，完全可以使用 layer.js 进行弹窗显示-->
+                {{ if message }}
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>{{ message }}
+                </div>
+                {{ /if }}
+            </div>
+            <div class="layui-form-item">
+                <label for="subject" class="layui-form-label">
+                    <span class="x-red">*</span>专业门类</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="subject" name="subject" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="majorType" class="layui-form-label">
+                    <span class="x-red">*</span>专业类别</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="majorType" name="majorType" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="majorCode" class="layui-form-label">
+                    <span class="x-red">*</span>专业代码</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="majorCode" name="majorCode" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="level" class="layui-form-label">
+                    <span class="x-red">*</span>专业层次</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="level" name="level" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="schoolYear" class="layui-form-label">
+                    <span class="x-red">*</span>修学年限</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="schoolYear" name="schoolYear" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="degree" class="layui-form-label">
+                    <span class="x-red">*</span>毕业学位</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="degree" name="degree" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="similarMajor" class="layui-form-label">
+                    <span class="x-red">*</span>类似专业</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="similarMajor" name="similarMajor" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="summary" class="layui-form-label">
+                    专业介绍
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="summary" name="summary" 
+                        class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="educationGoal" class="layui-form-label">
+                    培养目标
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="educationGoal" name="educationGoal" 
+                        class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="culture_target" class="layui-form-label">
+                    培养要求
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="culture_target" name="culture_target" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="famousScholar" class="layui-form-label">
+                    <span class="x-red">*</span>名人学者</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="famousScholar" name="famousScholar" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="mainCourse" class="layui-form-label">
+                    主干课程
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="mainCourse" name="mainCourse" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="courseRequire" class="layui-form-label">
+                    学科要求
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="courseRequire" name="courseRequire" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="knowledgeAbility" class="layui-form-label">
+                    必备能力
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="knowledgeAbility" name="knowledgeAbility" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="boyGirlRate" class="layui-form-label">
+                    <span class="x-red">*</span>男女比例</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="boyGirlRate" name="boyGirlRate" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="wenLikeRate" class="layui-form-label">
+                    <span class="x-red">*</span>喜欢比例</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="wenLikeRate" name="wenLikeRate" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="graduateNum" class="layui-form-label">
+                    <span class="x-red">*</span>毕业人数</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="graduateNum" name="graduateNum" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="avgSalary" class="layui-form-label">
+                    <span class="x-red">*</span>平均薪酬</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="avgSalary" name="avgSalary" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="jobRankingOfAll" class="layui-form-label">
+                    <span class="x-red">*</span>就业排名</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="jobRankingOfAll" name="jobRankingOfAll" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="jobRankingOfSubject" class="layui-form-label">
+                    <span class="x-red">*</span>门类内的排名</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="jobRankingOfSubject" name="jobRankingOfSubject" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="lastYearEmployedRate" class="layui-form-label">
+                    <span class="x-red">*</span>就业率</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="lastYearEmployedRate" name="lastYearEmployedRate" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="maxRequireCity" class="layui-form-label">
+                    <span class="x-red">*</span>就业城市</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="maxRequireCity" name="maxRequireCity" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="maxRequireIndustry" class="layui-form-label">
+                    <span class="x-red">*</span>就业方向</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="maxRequireIndustry" name="maxRequireIndustry" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="subBtn" class="layui-form-label"></label>
+                <button class="layui-btn"  id="subBtn">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+<script src="/js/sweetalert.min.js"></script>
+
+<script>
+    // <!--前台验证 js + 正则 ：jquery validate 插件 -->
+    // https://www.runoob.com/jquery/jquery-plugin-validate.html
+    // 前台验证是为了更好的用户体验，后台验证是为了数据的安全。后端永远不要相信前端提交的数据。 后端必须自己验证，不能依赖于前端。
+    $(function () {
+
+        // $("#subBtn").click(function (e) {
+        //     let cateName= $("#code").val().trim();
+        //     if(cateName == ''){
+        //         // alert('分类名称不能为空');
+        //         swal( "提示" ,  "类名称不能为空" ,  "error" );
+        //         // swal( "提示" ,  "类名称不能为空" ,  "success" );
+        //         e.preventDefault(); // 阻止表单的默认行为
+        //         return false;
+        //     }
+        // })
+    })
+
+</script>
+</html>
